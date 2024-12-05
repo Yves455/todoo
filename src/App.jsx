@@ -1,9 +1,9 @@
-import Container from "./components/Container.jsx";
+import Wrapper from "./components/Wrapper.jsx";
 
 const App = () => {
 	return (
 		<>
-			<Container />
+			<Wrapper />
 		</>
 	);
 };
