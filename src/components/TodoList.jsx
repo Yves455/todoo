@@ -19,11 +19,11 @@ const TodoList = ({ todos, toggleCompletionStatus, deleteTodoItem }) => {
 			) : (
 				<>
 					<img
-						className="w-48 mx-auto opacity-15 mt-8 mb-0"
+						className="w-48 mx-auto opacity-25 dark:opacity-10 mt-8 mb-0"
 						src={cloudImg}
 						alt="No Todos"
 					/>
-					<p className="italic text-slate-400 font-thin text-center">
+					<p className="italic text-slate-400 text-center">
 						No todos available! Add some.
 					</p>
 				</>

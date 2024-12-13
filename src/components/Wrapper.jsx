@@ -10,6 +10,12 @@ const Wrapper = () => {
 
 	const [todos, setTodos] = useState([]);
 
+	const [darkTheme, setDarkTheme] = useState(false);
+
+	const toggleDarkTheme = () => {
+		setDarkTheme((prevState) => !prevState);
+	};
+
 	const addNewTodoItem = (title) => {
 		const createTodoItem = async () => {
 			try {
@@ -78,7 +84,7 @@ const Wrapper = () => {
 	}, [todos]);
 
 	return (
-		<div>
+		<div className={darkTheme ? "dark" : ""}>
 			<div className="h-svh">
 				<div className="bg-slate-900 h-1/3"></div>
 				<div className="h-2/3"></div>
@@ -86,9 +92,12 @@ const Wrapper = () => {
 			<div className="sm:flex sm:justify-center sm:items-center">
 				<main className="py-4 px-2 h-5/6 absolute top-24 w-full sm:w-5/6 lg:w-2/3 xl:w-1/3">
 					{/* Header Component goes here */}
-					<Header />
+					<Header
+						darkTheme={darkTheme}
+						toggleDarkTheme={toggleDarkTheme}
+					/>
 
-					<div className="bg-slate-800 text-gray-100 px-2 py-4 rounded-md h-5/6 relative">
+					<div className="bg-white dark:bg-slate-800 dark:border-none text-gray-100 px-2 py-4 rounded-md h-5/6 relative border-2">
 						{/* Todo Form Component goes here */}
 						<TodoForm addNewTodoItem={addNewTodoItem} />
 
