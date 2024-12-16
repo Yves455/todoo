@@ -10,15 +10,7 @@ const Header = ({ darkTheme, toggleDarkTheme }) => {
 				onClick={toggleDarkTheme}
 				className="cursor-pointer hover:text-gray-400"
 			>
-				{darkTheme ? (
-					<>
-						<BsFillSunFill />
-					</>
-				) : (
-					<>
-						<BsFillMoonFill />
-					</>
-				)}
+				{darkTheme ? <BsFillSunFill /> : <BsFillMoonFill />}
 			</div>
 		</header>
 	);
